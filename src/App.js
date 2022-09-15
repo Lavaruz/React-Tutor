@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Introduction from './components/introduction'
+import {useState} from 'react'
 
 function App() {
+
+  const [getData, setData] = useState('')
+
+  const buttonPress = () => {
+    setData('iam pregnant')
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Hello World React Im Coming</h1>
+      <Introduction name='Assami Muzaki' age={20}/>
+
+      <button onClick={() => buttonPress()}>Click Here</button>
+      <Introduction name='Diana' age={20} status={getData}/>
+      
     </div>
   );
 }
